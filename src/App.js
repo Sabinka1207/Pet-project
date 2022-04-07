@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { Hero, Cards, Header, Form } from "./views";
+import { useEffect, useState } from "react";
+import API from "./utils/API";
 
 function App() {
+  const [positions, setPositions] = useState(false);
+  const [users, setUsers] = useState(null);
+  const [usersPage, setUsersPage] = useState(1);
+
+  const loadPositions = async () => {
+    const loadedPositions = [];
+    const res = await API.getPositions();
+    res.forEach((item) => {
+      loadedPositions.push(item.name);
+    });
+    setPositions(loadedPositions);
+  };
+
+  const loadMore = () => {
+    setUsersPage((prevCount) => prevCount + 1);
+  };
+
+  const resetPage = () => {
+    setUsersPage(1);
+  };
+
+  const loadUsers = async (page) => {
+    const res = await API.getUsers(page);
+    setUsers({ ...users, res });
+  };
+
+  useEffect(() => {
+    loadUsers();
+  }, []);
+
+  useEffect(() => {
+    loadPositions(usersPage);
+  }, [usersPage]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Hero />
+      <Cards userList={users} onClick={loadMore} />
+      <Form positions={positions} />
     </div>
   );
 }

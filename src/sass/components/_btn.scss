@@ -1,0 +1,24 @@
+// Btn
+
+.yellow {
+  background-color: var(--primaryColor);
+}
+
+.grey {
+  background-color: #b4b4b4;
+  color: var(--white);
+}
+
+.btn {
+  width: 100px;
+  height: 34px;
+  border-radius: 80px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:hover {
+    background-color: #ffe302;
+    color: var(--black);
+  }
+}

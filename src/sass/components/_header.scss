@@ -1,0 +1,20 @@
+//Header
+
+header{
+  background-color: var(--white);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  max-width: 100%;
+}
+
+.buttons {
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+}

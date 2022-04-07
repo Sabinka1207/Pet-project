@@ -1,0 +1,164 @@
+// Form
+
+.formHeading{
+  margin-top: 140px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.form {
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    width: 328px;
+  }
+}
+
+
+.inputArea {
+  display: flex;
+  width: 100%;
+  height: 54px;
+  margin-bottom: 50px;
+
+  position: relative;
+
+  &:last-of-type {
+    margin-bottom: 43px;
+  }
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #D0CFCF;
+  background: var(--backgroundColor);
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+.error {
+  border: 2px solid #CB3D40;
+}
+
+.radioGroupLabel{
+  width: 100%;
+  margin-bottom: 11px;
+}
+
+.radioArea{
+width: 100%;
+margin-bottom: 7px;
+
+&:last-of-type{
+  margin-bottom: 47px;
+}
+}
+
+.radionBtnLabel{
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.radioBtn:after {
+  top: -3px;
+  left: -1px;
+  position: relative;
+  cursor: pointer;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: var(--backgroundColor);
+  border: 1px solid #D0CFCF;
+}
+
+.radioBtn:checked:after {
+  width: 19px;
+  height: 19px;
+  border-radius: 19px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--secondaryColor);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 4px solid white;
+  outline: 1px solid var(--secondaryColor);
+}
+
+/*
+ * File
+ */
+
+.file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.file input {
+  min-width: 14rem;
+  margin: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 2.5rem;
+  padding: .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: .075rem solid #ddd;
+  border-radius: .25rem;
+  box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, .05);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.file-custom:after {
+  content: "Upload your file";
+}
+
+.file-custom:before {
+  position: absolute;
+  top: -.075rem;
+  right: -.075rem;
+  bottom: -.075rem;
+  z-index: 6;
+  display: block;
+  content: "Upload";
+  height: 2.5rem;
+  padding: .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #eee;
+  border: .075rem solid #ddd;
+  border-radius: 0 .25rem .25rem 0;
+}
+
+/* Focus */
+.file input:focus~.file-custom {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem var(--secondaryColor);
+}

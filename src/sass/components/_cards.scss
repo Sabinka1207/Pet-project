@@ -1,0 +1,79 @@
+.cardList {
+  display: grid;
+  padding: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 767px) {
+    width: 328px;
+    grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
+    grid-gap: 20px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 704px;
+    grid-template-columns: repeat(auto-fill, minmax(344px, 1fr));
+    grid-gap: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 904px;
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+    grid-gap: 29px;
+  }
+}
+
+.cardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.cardsHeading{
+  margin-top: 140px;
+}
+
+.cardList{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.userCard { 
+  height: 254px;
+  padding: 20px;
+  background-color: var(--white);
+  outline: 1px solid red;
+}
+
+.userCardImageThumb{
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+  height: 70px;
+}
+
+.userCardImage{
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.userCardName{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.userCardContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noWrapText {
+  width: 304px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
