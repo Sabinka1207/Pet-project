@@ -144,6 +144,8 @@ button {
 .btn:hover {
   background-color: #ffe302;
   color: var(--black);
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 header {
@@ -239,7 +241,6 @@ header {
   height: 254px;
   padding: 20px;
   background-color: var(--white);
-  outline: 1px solid red;
 }
 
 .userCardImageThumb {
@@ -262,23 +263,31 @@ header {
 }
 
 .userCardContact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
 }
 
 .noWrapText {
-  width: 304px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 767px) {
+  .noWrapText {
+    width: 288px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .noWrapText {
+    width: 304px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .noWrapText {
+    width: 242px;
+  }
 }
 
 .formHeading {
@@ -426,10 +435,6 @@ header {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.file-custom:after {
-  content: "Upload your file";
 }
 
 .file-custom:before {

@@ -1,4 +1,4 @@
-import "../sass/main.css";
+import "../css/main.min.css";
 import background from "../img/pexels-alexandr-podvalny-1227513.jpeg";
 import Btn from "../components/button";
 

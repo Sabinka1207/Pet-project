@@ -1,9 +1,18 @@
 import axios from "axios";
+import { Notify } from "notiflix";
 
 axios.defaults.baseURL =
   "https://frontend-test-assignment-api.abz.agency/api/v1";
 
-// https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5
+const getToken = async () => {
+  try {
+    const result = await axios.get(`/token`);
+    return await result.data.token;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const getUsers = async (page = 1, count = 6) => {
   try {
     const result = await axios.get(`/users?page=${page}&count=${count}`);
@@ -13,16 +22,20 @@ const getUsers = async (page = 1, count = 6) => {
   }
 };
 
-const addUser = async () => {
-  try {
-    const result = await axios.post(`/users`, {});
-    return await result.data;
-  } catch (error) {
-    console.log(error);
-  }
+const addUser = async (formData) => {
+  const token = await API.getToken();
+
+  const result = await axios.post("/users", formData, {
+    headers: { Token: token },
+  });
+
+  result.data.success
+    ? Notify.success(result.data.message)
+    : Notify.failure(result.data.message);
+
+  return result.data.success;
 };
 
-// https://frontend-test-assignment-api.abz.agency/api/v1/positions
 const getPositions = async () => {
   try {
     const result = await axios.get(`/positions`);
@@ -33,6 +46,7 @@ const getPositions = async () => {
 };
 
 const API = {
+  getToken,
   getUsers,
   addUser,
   getPositions,

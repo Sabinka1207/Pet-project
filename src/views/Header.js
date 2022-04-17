@@ -1,3 +1,4 @@
+import "../css/main.min.css";
 import Btn from "../components/button";
 import { ReactComponent as Logo } from "../img/Logo.svg";
 

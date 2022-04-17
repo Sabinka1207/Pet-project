@@ -44,7 +44,6 @@
   height: 254px;
   padding: 20px;
   background-color: var(--white);
-  outline: 1px solid red;
 }
 
 .userCardImageThumb{
@@ -66,14 +65,23 @@
 }
 
 .userCardContact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .noWrapText {
-  width: 304px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media screen and (max-width: 767px) {
+    width: 288px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 304px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 242px;
+  }
 }
