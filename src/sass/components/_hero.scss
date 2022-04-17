@@ -1,17 +1,5 @@
 // Hero
 
-// @media screen and (max-width: 767px) {
-
-// }
-
-// @media screen and (min-width: 768px) and (max-width: 1023px) {
-
-// }
-
-// @media screen and (min-width: 1024px) {
-
-// }
-
 .hero {
   text-align: center;
   display: flex;
@@ -54,41 +42,3 @@
   color: var(--white);
   margin-bottom: 32px;
 }
-
-// .hero__button {
-//   color: inherit;
-//   background-color: var(--accent-blue);
-//   font-weight: 700;
-//   font-style: normal;
-//   font-size: 16px;
-//   line-height: 30px;
-//   min-width: 200px;
-//   min-height: 50px;
-//   border-radius: 4px;
-//   margin-top: 30px;
-//   transition-property: background-color;
-//   transition-duration: 250ms;
-//   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-//   &:hover,
-//   &:focus {
-//     color: inherit;
-//     background-color: var(--accent-blue-active);
-//   }
-// }
-
-// .hero__tittle {
-//   font-weight: 900;
-//   font-style: normal;
-//   text-transform: uppercase;
-
-//   @media screen and (max-width: 1199px) {
-//     font-size: 26px;
-//     line-height: 42px;
-//   }
-
-//   @media screen and (min-width: 1200px) {
-//     font-size: 44px;
-//     line-height: 60px;
-//   }
-// }
